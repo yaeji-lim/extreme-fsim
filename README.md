@@ -77,10 +77,17 @@ source("final_sim_code.R")
 
 ## Evaluation Metrics
 
+## 📊 Evaluation Metrics
+
 As described in Section 3.2 of the paper:
-- **RMSE**: Root Mean Squared Error, $\sqrt{n^{-1} \sum_{i=1}^n \{\widehat{Q}_\tau(x_i) - Q_\tau(x_i)\}^2}$
-- **MAE**: Mean Absolute Error, $n^{-1} \sum_{i=1}^n |\widehat{Q}_\tau(x_i) - Q_\tau(x_i)|$
-- **MLRE**: Mean Log Relative Error, $n^{-1} \sum_{i=1}^n \log\{\widehat{Q}_\tau(x_i) / Q_\tau(x_i)\}$
-- **EER**: Empirical Exceedance Rate, $n^{-1} \sum_{i=1}^n \mathbf{1}\{y_i > \widehat{Q}_\tau(x_i)\}$
+
+* **RMSE** (Root Mean Squared Error):  
+  `sqrt( mean( (Q_hat - Q_true)^2 ) )`
+* **MAE** (Mean Absolute Error):  
+  `mean( abs( Q_hat - Q_true ) )`
+* **MLRE** (Mean Log Relative Error):  
+  `mean( log( Q_hat / Q_true ) )`
+* **EER** (Empirical Exceedance Rate):  
+  `mean( Y > Q_hat )`
 
 Outputs are saved in the `results/` folder as `.RData` files for downstream analysis and visualization.
