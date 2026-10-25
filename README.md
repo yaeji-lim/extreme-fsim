@@ -23,7 +23,7 @@ The code evaluates and compares the following five methods:
 ## Directory Structure
 
 ```text
-├── final_sim_code.R    # Main Monte Carlo simulation script
+├── code.R    # Main Monte Carlo simulation script
 ├── qsreg.R             # FSIQM fitting and GACV tuning helper functions
 ├── weighted_llh.cpp    # C++ implementation of weighted GPD log-likelihood (RcppArmadillo)
 ├── results/            # Directory where output .RData files are automatically saved
@@ -53,11 +53,11 @@ install.packages(c(
 To run the simulations from the terminal or RStudio:
 
 ```bash
-Rscript final_sim_code.R
+Rscript code.R
 ```
 
 ### 2. Customizing Configurations
-You can adjust the simulation parameters at the beginning of `final_sim_code.R` (or set them before sourcing the script in R):
+You can adjust the simulation parameters at the beginning of `code.R` (or set them before sourcing the script in R):
 
 ```R
 # Model link functions: "M1" (Linear), "M2" (Nonlinear), "M3" (Linear + Nonlinear)
@@ -70,7 +70,7 @@ n_sim <- 100
 tau_interm <- 0.8
 
 # Run simulation
-source("final_sim_code.R")
+source("code.R")
 ```
 
 ---
